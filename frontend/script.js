@@ -84,6 +84,7 @@ const monthComponent = function (nth, name, days) {
         <section id="${nth}" class="${name}">
             <h2>${name}</h2>
             <div class="days">${daysHtml}</div>
+            <div class="selected-day"></div>
         </section>
         `;
 };
@@ -114,7 +115,46 @@ buttonElement.addEventListener("click", function () {
       )
     );
   }
+  // inItJanuaryEvents();
+
+  const dayElements = document.querySelectorAll(".day");
+  for (let i = 0; i < dayElements.length; i++) {
+    dayElements[i].addEventListener("click", function () {
+      dayElements[i].classList.toggle("clicked");
+    });
+  }
+
+  //dayElements.forEach(function (day) {
+  //day.addEventListener("click", function (event) {
+  //console.log(event);
+  //  event.target.classList.toggle("clicked");
+  //day.classList.toggle("clicked");
+  //});
+  //});
 });
+
+/* eltűnik a hónap és csak a kattintot nap jelenik meg az inItJanuaryEvents is ide tartozik.
+
+const hideDays = function (days) {
+  for (let day of days) {
+    day.classList.add("hidden");
+  }
+};
+
+const showDayInfo = function (dayIndex) {
+  let selectedDay = document.querySelector(".January .selected-day");
+  selectedDay.textContent = `January ${dayIndex}`;
+};
+
+const inItJanuaryEvents = function () {
+  let days = document.querySelectorAll(".January .days .day");
+  for (let day of days) {
+    day.addEventListener("click", function () {
+      hideDays(days);
+      showDayInfo(day.textContent);
+    });
+  }
+};*/
 
 //   rootElement.insertAdjacentHTML("beforeend", monthComponent(1, "january", 31));
 //   rootElement.insertAdjacentHTML("beforeend", monthComponent(2, "february", 28));
