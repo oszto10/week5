@@ -5,10 +5,20 @@
   gap: 50px;
   justify-content: center;
   align-items: flex-start;
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Football_field.svg/1352px-Football_field.svg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#root #\31  {
+  background-color: blue;
 }
 #root section {
   width: 100%;
+  background-color: aliceblue;
   max-width: 400px;
+  height: 269.02px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 #root section .days {
   display: flex;
@@ -33,22 +43,20 @@
   top: 0;
   right: 0;
 }
-
 @media only screen and (max-width: 800px) {
-  .day {
+  #root .day {
     color: red;
   }
 }
 @media only screen and (max-width: 700px) {
-  .day {
+  #root .day {
     font-size: 20px;
   }
 }
-.hidden {
+#root .hidden {
   display: none !important;
 }
-
-.clicked {
+#root .clicked {
   transform: rotate(180deg);
   transition: all 0.5s ease;
   background-color: green;
